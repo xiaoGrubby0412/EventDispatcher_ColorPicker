@@ -8,44 +8,23 @@ using UnityEngine.UI;
 public class NewBehaviourScript : MonoBehaviour
 {
     public Button btnSend;
+
     public Button btnRemove;
-    public enum EventType
+
+    public class DataShowHello : EventBase
     {
-        ShowHello,
-        ShoeError,
-    }
-    
-    public class DataShowHello : IEvent
-    {
-        public EventType type;
-        public Enum EventType {
-            get
-            {
-                return type;
-            }
-        }
-        public void DestroySelf()
+        public DataShowHello(Enum eventType) : base(eventType)
         {
-            
         }
     }
-    
-    public class DataShowError : IEvent
+
+    public class DataShowError : EventBase
     {
-        public EventType type;
-        public Enum EventType {
-            get
-            {
-                return type;
-            }
-        }
-        public void DestroySelf()
+        public DataShowError(Enum eventType) : base(eventType)
         {
-            
         }
     }
-    
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,13 +39,14 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void BtnOnClick()
     {
-        DataShowHello dataHello = new DataShowHello();
-        dataHello.type = EventType.ShowHello;   
-        EventCenter.Instance.TriggerEvent(dataHello);
+        DataShowHello dataHello = new DataShowHello(EventType.ShowHello);
+        EventCenter.Instance.TriggerEvent(EventType.ShowHello, dataHello);
 
-        DataShowError dataError = new DataShowError();
-        dataError.type = EventType.ShoeError;
-        EventCenter.Instance.TriggerEvent(dataError);
+        DataShowError dataError = new DataShowError(EventType.ShoeError);
+        EventCenter.Instance.TriggerEvent(EventType.ShoeError, dataError);
+        
+        DataShowError dataError1 = new DataShowError(EventType.ShoeError);
+        EventCenter.Instance.TriggerEvent(EventType.ShoeError, dataError, true);
     }
 
     private void BtnRemoveOnClick()
@@ -83,7 +63,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         Debug.Log("in ShowHello");
     }
-    
+
     private void ShowHello1(IEvent evt)
     {
         Debug.Log("in ShowHello1");
@@ -92,6 +72,5 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

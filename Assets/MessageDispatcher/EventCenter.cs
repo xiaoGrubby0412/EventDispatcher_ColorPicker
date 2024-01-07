@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+
+public enum EventType
+{
+    ShowHello,
+    ShoeError,
+}
 
 public class EventCenter : MonoBehaviour, IEventCenter
 {
-    private static EventCenter instance;
     private Dictionary<Enum, IEventHandlerManger> DictHandler = new Dictionary<Enum, IEventHandlerManger>();
-
     private Queue<IEvent> eventQuene = new Queue<IEvent>();
+
+    private static EventCenter instance;
 
     public static EventCenter Instance
     {
-        get
-        {
-            return instance;
-        }
+        get { return instance; }
     }
 
     private void Awake()
@@ -49,20 +51,18 @@ public class EventCenter : MonoBehaviour, IEventCenter
         }
     }
 
-    public void TriggerEvent(IEvent e)
+    public void TriggerEvent(Enum EventType, IEvent e, bool ifNow = false)
     {
+        if (ifNow)
+        {
+            BroadCastEvent(e);
+            return;
+        }
+
         this.eventQuene.Enqueue(e);
     }
 
-
-    #region 广播事件相关
-
-    public void Update()
-    {
-        BroadCastEvent();
-    }
-
-    public void BroadCastEvent()
+    private void Update()
     {
         if (eventQuene.Count < 1)
         {
@@ -74,7 +74,7 @@ public class EventCenter : MonoBehaviour, IEventCenter
         BroadCastEvent(e);
     }
 
-    public void BroadCastEvent(IEvent e)
+    private void BroadCastEvent(IEvent e)
     {
         if (e == null)
         {
@@ -92,31 +92,15 @@ public class EventCenter : MonoBehaviour, IEventCenter
         e.DestroySelf();
     }
 
-    #endregion
-
-    #region 清除数据相关
-
     public void DestroySelf()
     {
-        ClearEvenQueneAndDictHandler();
-    }
-
-    public void OnDestroy()
-    {
-        ClearEvenQueneAndDictHandler();
+        DictHandler.Clear();
+        eventQuene.Clear();
         instance = null;
     }
 
-    public void ClearEventQuene()
+    private void OnDestroy()
     {
-        eventQuene.Clear();
+        DestroySelf();
     }
-
-    public void ClearEvenQueneAndDictHandler()
-    {
-        DictHandler.Clear();
-        ClearEventQuene();
-    }
-
-    #endregion
 }
