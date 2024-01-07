@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4c82abf7-f37f-e034-698c-2e40c1f825c4}</ProjectGuid>
+    <ProjectGuid>{bd901754-1aec-e1b7-388f-8d2330a7a0cb}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -41,14 +41,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\MessageDispatcher\EventCenter.cs" />
+     <Compile Include="Assets\NewBehaviourScript.cs" />
      <Compile Include="Assets\Color\ColorCircle.cs" />
+     <Compile Include="Assets\MessageDispatcher\EventHandlerManager.cs" />
      <Compile Include="Assets\Color\ColorRGB.cs" />
+     <Compile Include="Assets\MessageDispatcher\IEventCenter.cs" />
      <Compile Include="Assets\Color\ColorPanel.cs" />
      <Compile Include="Assets\Color\ColorManager.cs" />
-     <Compile Include="Assets\MessageDispatcher\EventCenter.cs" />
-     <Compile Include="Assets\MessageDispatcher\EventHandlerManager.cs" />
-     <Compile Include="Assets\MessageDispatcher\IEventCenter.cs" />
-     <Compile Include="Assets\NewBehaviourScript.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Color" />
      <Folder Include="Assets\MessageDispatcher" />
@@ -303,10 +303,10 @@
      <HintPath>D:\Tools\Unity\2021.3.26f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="ReportGeneratorMerged">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\PackageCache\com.unity.testtools.codecoverage@1.2.3\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\PackageCache\com.unity.testtools.codecoverage@1.2.3\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.iOS.Extensions.Xcode">
      <HintPath>D:\Tools\Unity\2021.3.26f1c1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -687,73 +687,73 @@
      <HintPath>D:\Tools\Unity\2021.3.26f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow.Editor">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Shared.Editor">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core.Editor">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
      </Reference>
      <Reference Include="Unity.EditorCoroutines.Editor">
-     <HintPath>D:\UnityProject\ProjectGitHub\ColorPicker\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+     <HintPath>D:\UnityProject\ProjectGitHub\EventDispatcher_ColorPicker\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
